@@ -27,6 +27,32 @@ Runtime: 72 ms, faster than 94.30% of JavaScript online submissions for Two Sum.
 Memory Usage: 38.8 MB, less than 41.48% of JavaScript online submissions for Two Sum.
 */
 
+//==============================================
+
+/*
+Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+*/
+
+var diagonalDifference = function (arr) {
+  // Write your code here
+  let leftDiag = 0;
+  let rightDiag = 0;
+
+  for (var i = 0; i < arr.length; i++) {
+     for (var j = 0; j < arr[i].length; j++) {
+         if (i === j) {
+             leftDiag += arr[i][j];
+         }
+         if (i +j === arr.length -1) {
+             rightDiag += arr[i][j];
+         }
+     }
+  }
+
+  return Math.abs(leftDiag-rightDiag);
+}
+
 module.exports = {
-  twoSum
+  twoSum,
+  diagonalDifference
 }
