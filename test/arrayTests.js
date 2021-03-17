@@ -14,4 +14,7 @@ describe('diagonal difference function', () => {
   it('should return the absolute difference between the diagonal numbers in the matrix', () => {
     expect(arr.diagonalDifference([[11, 2, 4],[4, 5, 6],[10, 8, -12]])).to.equal(15);
   });
-})
+});
+
+
+

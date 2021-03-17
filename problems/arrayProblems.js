@@ -71,10 +71,15 @@ function plusMinus(arr) {
   console.log((minus/arr.length).toFixed(6));
   console.log((zero/arr.length).toFixed(6));
 
+};
+
+function saySomething() {
+  console.log("Hello World");
 }
 
 module.exports = {
   twoSum,
   diagonalDifference,
-  plusMinus
+  plusMinus,
+  saySomething
 }
