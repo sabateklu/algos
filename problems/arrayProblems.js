@@ -51,8 +51,30 @@ var diagonalDifference = function (arr) {
 
   return Math.abs(leftDiag-rightDiag);
 }
+//==========================================================
+/*
+Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with  places after the decimal.
+*/
+
+function plusMinus(arr) {
+  let plus = 0;
+  let minus = 0;
+  let zero = 0;
+
+  arr.forEach((num) => {
+      if (num < 0) minus++;
+      else if (num > 0) plus++;
+      else if (num === 0) zero++;
+  })
+
+  console.log((plus/arr.length).toFixed(6));
+  console.log((minus/arr.length).toFixed(6));
+  console.log((zero/arr.length).toFixed(6));
+
+}
 
 module.exports = {
   twoSum,
-  diagonalDifference
+  diagonalDifference,
+  plusMinus
 }
