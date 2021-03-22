@@ -73,13 +73,33 @@ function plusMinus(arr) {
 
 };
 
-function saySomething() {
-  console.log("Hello World");
+//==========================================
+/*
+Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+*/
+
+function miniMaxSum(arr) {
+  let min = 0;
+  let max = 0;
+
+  arr.sort((a, b)=> a-b);
+
+  for (let i = 0; i < arr.length; i++) {
+      if (0 < i  && i < 5) {
+          max+= arr[i];
+      }
+      if ( -1 < i && i< 4) {
+          min+= arr[i];
+      }
+  }
+
+  console.log(min, max);
 }
+miniMaxSum([4, 7, 8, 2, 6]);
 
 module.exports = {
   twoSum,
   diagonalDifference,
   plusMinus,
-  saySomething
+  miniMaxSum
 }
