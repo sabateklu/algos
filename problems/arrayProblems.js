@@ -95,8 +95,7 @@ function miniMaxSum(arr) {
 
   console.log(min, max);
 }
-miniMaxSum([4, 7, 8, 2, 6]);
-
+miniMaxSum([4, 7, 8, 2, 6])
 module.exports = {
   twoSum,
   diagonalDifference,
