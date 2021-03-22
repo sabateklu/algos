@@ -16,5 +16,11 @@ describe('diagonal difference function', () => {
   });
 });
 
+describe('birthdayCakeCandles function', () => {
+  it('should return the number of the tallest candles in the array', ()=> {
+    expect(arr.birthdayCakeCandles([3, 1, 3, 2])).to.equal(2);
+  })
+})
+
 
 
