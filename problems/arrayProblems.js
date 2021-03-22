@@ -95,10 +95,31 @@ function miniMaxSum(arr) {
 
   console.log(min, max);
 }
-miniMaxSum([4, 7, 8, 2, 6])
+//miniMaxSum([4, 7, 8, 2, 6]);
+
+/*
+You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest.
+*/
+
+function birthdayCakeCandles(candles) {
+  // Write your code here
+  candles.sort((a, b) => a-b);
+  let tallest = candles[candles.length - 1];
+  let count = 0;
+  candles.forEach((candle) => {
+      if (candle === tallest) {
+          count++;
+      }
+  })
+
+  return count;
+}
+
+console.log(birthdayCakeCandles([3, 1, 3, 2]))
 module.exports = {
   twoSum,
   diagonalDifference,
   plusMinus,
-  miniMaxSum
+  miniMaxSum,
+  birthdayCakeCandles
 }
