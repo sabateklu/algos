@@ -115,7 +115,39 @@ function birthdayCakeCandles(candles) {
   return count;
 }
 
-console.log(birthdayCakeCandles([3, 1, 3, 2]))
+/*
+
+
+*/
+
+var addTwoNumbers = function(l1, l2) {
+  let lOne = '';
+  let lTwo = '';
+
+  l1.forEach((item) => {
+      let stringNum = item.toString();
+      lOne = stringNum + lOne;
+  })
+
+  l2.forEach((item) => {
+      let stringNum = item.toString();
+      lTwo = stringNum + lTwo;
+  })
+
+  lOne = Number(lOne);
+  lTwo = Number(lTwo);
+
+  let total = (lOne + lTwo).toString();
+
+  let result = [];
+
+  for (let i = total.length -1; i > -1; i--) {
+      result.push(Number(total[i]));
+  }
+  return result;
+};
+
+console.log(addTwoNumbers([2,4,3], [5,6,4]));
 module.exports = {
   twoSum,
   diagonalDifference,
