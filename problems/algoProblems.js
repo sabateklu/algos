@@ -109,5 +109,6 @@ console.log(isAnagram('mouse', 'useoml'));// false
 
 module.exports = {
   staircase,
-  timeConversion
+  timeConversion,
+  isAnagram
 }
