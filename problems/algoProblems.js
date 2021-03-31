@@ -63,6 +63,50 @@ function timeConversion(s) {
 }
 //timeConversion('03:04:23PM');
 
+
+// return if two strings are anagrams of each other
+const isAnagram = (str1, str2) =>{
+  // create function that takes string input and sanitizes it and returns an object with the letters broken up into keys and their value the number of times the letter appears in the string
+
+  let helper = (str)=> {
+    str = (str.replace(/[^A-Za-z]/g, "")).toLowerCase();
+
+    let counter = {};
+
+    for (let i = 0; i < str.length; i++) {
+      if (counter[str[i]]) {
+        counter[str[i]]++;
+      } else {
+        counter[str[i]] = 1;
+      }
+    }
+
+    return counter;
+  }
+
+  let strOneCount = helper(str1);
+  let strTwoCount = helper(str2);
+
+  for (let key in strOneCount) {
+    if (strTwoCount[key]) {
+      if (strOneCount[key] !== strTwoCount[key]) {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+
+  if (JSON.stringify(strOneCount).length !== JSON.stringify(strTwoCount).length) {
+    return false;
+  }
+
+  return true;
+}
+console.log(isAnagram('dogrkb29p3i3hr$ $9?', 'catmodjb'));// false
+console.log(isAnagram('dog$ $9?', 'god')); // true
+console.log(isAnagram('mouse', 'useoml'));// false
+
 module.exports = {
   staircase,
   timeConversion
