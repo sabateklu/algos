@@ -107,6 +107,67 @@ console.log(isAnagram('dogrkb29p3i3hr$ $9?', 'catmodjb'));// false
 console.log(isAnagram('dog$ $9?', 'god')); // true
 console.log(isAnagram('mouse', 'useoml'));// false
 
+
+//==========================================================================
+// Complete the countApplesAndOranges function below.
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+
+  /*
+  countApplesAndOranges has the following parameter(s):
+
+  s: integer, starting point of Sam's house location.
+  t: integer, ending location of Sam's house location.
+  a: integer, location of the Apple tree.
+  b: integer, location of the Orange tree.
+  apples: integer array, distances at which each apple falls from the tree.
+  oranges: integer array, distances at which each orange falls from the tree.
+  */
+
+  // output:
+  /*
+  Print two integers on two different lines:
+
+  The first integer: the number of apples that fall on Sam's house.
+  The second integer: the number of oranges that fall on Sam's house.
+  */
+
+  // declare output variables for num of apples and oranges falled on sams house
+
+      // create a helper function that applies the definitive position of the fruit after     falling from the tree
+
+      const helper = (positionOfTree, arrayOfDistance) => {
+          let definitiveDist = [];
+
+          arrayOfDistance.forEach((num) => {
+              definitiveDist.push(num + positionOfTree);
+          })
+
+          return definitiveDist;
+      }
+
+      let applesPosition= helper(a, apples);
+      let orangePosition = helper(b, oranges);
+
+      // create a helper function that iterates through each definitive position of fruit     and sees if it is in the range of the house
+
+      const onHouse = (fruitPositions, houseStart, houseEnd) => {
+          let onTheHouse = 0;
+          fruitPositions.forEach((fruit) => {
+              if (fruit >= houseStart && fruit <= houseEnd) {
+                  onTheHouse++;
+              }
+          })
+          return onTheHouse;
+      }
+
+      let numOfApples = onHouse(applesPosition, s, t);
+      let numOfOranges = onHouse(orangePosition, s, t);
+
+      console.log(numOfApples);
+      console.log(numOfOranges);
+  }
+
+
 module.exports = {
   staircase,
   timeConversion,
