@@ -167,6 +167,30 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
       console.log(numOfOranges);
   }
 
+  //=================================================
+  // Complete the kangaroo function below.
+function kangaroo(x1, v1, x2, v2) {
+  // declare variables for the current position of each kangaroo
+  let kang1Pos = x1;
+  let kang2Pos = x2;
+  let matchingStep = false;
+
+  for (let i = 0; i < 10000; i++) {
+      kang1Pos += v1;
+      kang2Pos += v2;
+
+      if (kang1Pos === kang2Pos) {
+          return "YES";
+      }
+  }
+
+  return "NO";
+  // iterate up to 10000 incrementing the kangaroos positions
+  // if the positions match at any point in the iteration
+      // print YES
+  // otherwise print NO
+
+}
 
 module.exports = {
   staircase,
